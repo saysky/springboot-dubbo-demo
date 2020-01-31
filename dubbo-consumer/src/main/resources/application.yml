@@ -1,0 +1,19 @@
+# 配置端口
+server:
+  port: 8080
+
+# dubbo 配置
+dubbo:
+  application:
+    name: dubbo-consumer
+  registry:
+    address: 192.168.43.217:2181
+    protocol: zookeeper
+    check: false
+  monitor:
+    protocol: registry
+  consumer:
+    check:  false
+    timeout: 3000
+  scan: com.liuyanzhao.dubbo
+

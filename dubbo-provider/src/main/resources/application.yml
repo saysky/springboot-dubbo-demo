@@ -1,0 +1,41 @@
+# 配置端口
+server:
+  port: 8081
+
+# dubbo 配置
+dubbo:
+  application:
+    name: dubbo-provider
+  registry:
+    address: 192.168.43.217:2181
+    protocol: zookeeper
+  protocol:
+    name: dubbo
+    port: 22288
+  monitor:
+    protocol: registry
+  consumer:
+    check: false
+    timeout: 3000
+
+spring:
+  # 为了测试方便，这里数据库持久层采用 h2 数据库
+  datasource:
+    data: classpath:db/data.sql
+    schema: classpath:db/schema.sql
+    url: jdbc:h2:mem:dbtest
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+    platform: h2
+    sql-script-encoding: utf-8
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        web-allow-others: true
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.liuyanzhao.dubbo.api.entity
