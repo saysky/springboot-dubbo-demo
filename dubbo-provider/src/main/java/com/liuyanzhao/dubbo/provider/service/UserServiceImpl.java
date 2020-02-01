@@ -7,6 +7,8 @@ import com.liuyanzhao.dubbo.provider.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 
 /**
  * @author 言曌
@@ -24,5 +26,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findById(Long id) {
         return userMapper.findById(id);
+    }
+
+    @Override
+    public void insert(User user) {
+        userMapper.insert(user);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userMapper.findAll();
     }
 }

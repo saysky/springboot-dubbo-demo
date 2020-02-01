@@ -7,13 +7,9 @@ dubbo:
   application:
     name: dubbo-provider
   registry:
+    # 修改为自己的ip
     address: 192.168.43.217:2181
     protocol: zookeeper
-  protocol:
-    name: dubbo
-    port: 22288
-  monitor:
-    protocol: registry
   consumer:
     check: false
     timeout: 3000

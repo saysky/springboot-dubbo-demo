@@ -10,12 +10,24 @@
         <result column="email" jdbcType="VARCHAR" property="email" />
     </resultMap>
 
+    <insert id="insert">
+        INSERT INTO `user` (username, password, nickname, email)
+        VALUES (#{username}, #{password}, #{nickname}, #{email})
+    </insert>
+
     <select id="findById" resultMap="BaseResultMap">
         SELECT
             id, username, password, nickname, email
         FROM
             `user`
         WHERE id = #{value}
+    </select>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT
+            id, username, password, nickname, email
+        FROM
+            `user`
     </select>
 
 </mapper>

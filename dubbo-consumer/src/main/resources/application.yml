@@ -7,13 +7,11 @@ dubbo:
   application:
     name: dubbo-consumer
   registry:
+    # 修改为自己的ip
     address: 192.168.43.217:2181
     protocol: zookeeper
     check: false
-  monitor:
-    protocol: registry
   consumer:
     check:  false
     timeout: 3000
-  scan: com.liuyanzhao.dubbo
 
